@@ -23,3 +23,16 @@ def scold(): #The function that needs to be wrapped
     return "I HATE YOU"  #The return value
 
 scold()  #Run th function. No need to save the return and then execute the function
+
+#STANDARD DECORATOR FUNCTION
+
+def shout(fn):
+    def wrapper(*args, **kwargs):
+        return fn(*args, **kwargs).upper()
+    return wrapper
+
+@shout
+def greet(name,place):
+    return f"Hi I am {name}, and I am from {place}"
+
+print(greet(name="John",place="Berlin"))
