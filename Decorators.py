@@ -36,3 +36,43 @@ def greet(name,place):
     return f"Hi I am {name}, and I am from {place}"
 
 print(greet(name="John",place="Berlin"))
+
+#The above standard decorator function have a problem. 
+#It cannot return us the function name,documentation etc
+#Lets check that
+
+def shout(fn):
+    """This is a wrapper function."""
+    def wrapper(*args, **kwargs):
+        """This is a wrapper function."""
+        return fn(*args, **kwargs).upper()
+    return wrapper
+
+@shout
+def greet(name,place):
+    """This is a function to greet a person by introducing yourself"""
+    return f"Hi I am {name}, and I am from {place}"
+
+print(greet.__name__) # It will print the name of the wrapper function
+print(greet.__doc__) # It will print the docs of the wrapper function
+print(greet(name="John",place="Berlin"))
+
+#TO RESOLVE IT PYTHON USES WRAP MODULE FROM FUNCTOOLS
+from functools import wraps
+
+def shout(fn):
+    """This is a wrapper function."""
+    @wraps(fn)
+    def wrapper(*args, **kwargs):
+        """This is a wrapper function."""
+        return fn(*args, **kwargs).upper()
+    return wrapper
+
+@shout
+def greet(name,place):
+    """This is a function to greet a person by introducing yourself"""
+    return f"Hi I am {name}, and I am from {place}"
+
+print(greet.__name__) # It will print the name of the wrapper function
+print(greet.__doc__) # It will print the docs of the wrapper function
+print(greet(name="John",place="Berlin"))
