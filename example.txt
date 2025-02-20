@@ -1,0 +1,3 @@
+Hello, this is an example file.
+This is the second line.
+This is an appended line.
