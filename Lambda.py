@@ -60,6 +60,3 @@ print(f"students sorted based on the scores obtained : {sorted_students_names}")
 nums = [1, 2, 3, 4, 5]
 squared = [(lambda x: x**2)(x) for x in nums]
 print(squared)  # Output: [1, 4, 9, 16, 25]
-
-
-
