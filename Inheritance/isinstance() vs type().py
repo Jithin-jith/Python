@@ -27,3 +27,4 @@ print("\n")
 print("Using isinstance() function : ")
 print(isinstance(dog, Dog))    # True
 print(isinstance(dog, Animal)) # True (Dog is a subclass of Animal)
+# isinstance(dog, Animal) returns True because Dog is derived from Animal.
