@@ -1,5 +1,5 @@
-#Delegating means calling a method specifically in the ancestry hierarchy (or a sibling class)
-#Often when overriding methods, we need to delegate back to the parent class
+# Delegating means calling a method specifically in the ancestry hierarchy (or a sibling class)
+# Often when overriding methods, we need to delegate back to the parent class
 
 #The most common example is the __ini__ method
 #let's look at a naive way of overriding the __ini__ method
@@ -9,7 +9,7 @@ class Person:
         self.name = name
         self.age = age
         
-def Student(Person):
+class Student(Person):
     def __init__(self,name,age,major): #Here we are overriding the __init__ method. 
         self.name = name
         self.age = age
