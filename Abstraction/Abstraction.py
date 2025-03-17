@@ -2,6 +2,9 @@
 """Python provides abstraction using abstract classes and abstract methods, 
 which are defined using the ABC (Abstract Base Class) module."""
 
+"""Methods which has only declaration and not definitions are called as 'Abstract Methods'.
+Classes which has atleast one abstract method is called as Abstract class"""
+
 # Let's see this with an example
 
 # Lets create a base class called "Vehicle" that inherits from the ABC class
